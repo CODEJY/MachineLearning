@@ -73,6 +73,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
     public void onActivityResult(int req,int res,Intent data) {
         try {
+            Log.d("图片识别：","图片识别");
             Uri uri = data.getData();
             Bitmap bit = BitmapFactory.decodeStream(getContentResolver().openInputStream(uri));
             imgView.setImageBitmap(bit);
