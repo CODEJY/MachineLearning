@@ -47,6 +47,7 @@ public class RecognizeImg {
 
         return outputs;
     }
+    //用于上面的recognize函数将bitmap转换成数组
     public static float[] bitmapToFloatArray(Bitmap bitmap){
         int height = bitmap.getHeight();
         int width = bitmap.getWidth();
