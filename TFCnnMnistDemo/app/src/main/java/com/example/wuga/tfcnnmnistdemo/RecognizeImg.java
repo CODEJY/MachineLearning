@@ -36,7 +36,7 @@ public class RecognizeImg {
         }
 
         // 输入数据
-        inferenceInterface.feed(INPUT_NODE, pixelArray);
+        inferenceInterface.feed(INPUT_NODE,pixelArray,784);
 
         //进行模型的推理
         inferenceInterface.run(new String[]{OUTPUT_NODE});
@@ -70,7 +70,7 @@ public class RecognizeImg {
                 //由于是灰度图，所以r,g,b分量是相等的。
                 assert(r==g && g==b);
 
-//                Log.i(TAG,i+","+j+" : argb = "+argb+", a="+a+", r="+r+", g="+g+", b="+b);
+                Log.i(TAG,i+","+j+" : argb = "+argb+", a="+a+", r="+r+", g="+g+", b="+b);
                 result[k++] = r / 255.0f;
             }
         }
@@ -79,10 +79,8 @@ public class RecognizeImg {
     }
     public int argmax(float[] prob){
         int result = 0;
-        for(int i=0;i<prob.length-1;i++) {
-            if (prob[i] < prob[i+1])
-                result = i+1;
-            else
+        for(int i=1;i<prob.length-1;i++) {
+            if (prob[result] < prob[i])
                 result = i;
         }
         return result;

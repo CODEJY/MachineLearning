@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         button.setOnClickListener(this);
         imgView = (ImageView)findViewById(R.id.image);
         textView = (TextView)findViewById(R.id.text);
-        textView.setText("hhhh");
+        textView.setText("预测结果");
     }
 
     @Override
@@ -44,6 +44,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             ActivityCompat.requestPermissions(this,new String[] {Manifest.permission.WRITE_EXTERNAL_STORAGE},MY_PERMISSION_REQUEST);
         } else {
             //已经授权
+            Log.d("已经授权","执行到这");
             choosePhoto();
         }
 
