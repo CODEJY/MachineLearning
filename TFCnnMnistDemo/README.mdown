@@ -1,0 +1,8 @@
+# Tensorflow MNIST Android Demo
+![](https://github.com/CODEJY/MachineLearning/blob/master/TFCnnMnistDemo/ScreenShot/Screenshot_1509609364.png)
+![](https://github.com/CODEJY/MachineLearning/blob/master/TFCnnMnistDemo/ScreenShot/Screenshot_1509610196.png)
+## Version
+- tensorflow:1.3.0
+## Accuracy
+- 98%
+### Note:The input image should be MNIST DataSet,the demo don't support any ohther images,because I don't process image,like gray processing and resize to [28,28].Maybe I will implment it if I think it's necessary.
